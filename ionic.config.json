@@ -1,6 +1,9 @@
 {
   "name": "OceansEvent",
-  "integrations": {},
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
   "type": "angular",
   "id": "24d06cea"
 }

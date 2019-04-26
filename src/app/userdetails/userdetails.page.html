@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>User Details</ion-title>
+    <ion-button (click)="back()" slot="start" size="small" fill="outline" color="light">
+        <ion-icon name="arrow-round-back"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content >
+    <ion-grid>
+      <ion-row>
+        <ion-col size-md="6" offset-md="3">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title text-center>User Details</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                    <ion-item>Email : {{usermail}}</ion-item>
+                    <ion-item>Name : {{username}}</ion-item>
+                    <ion-item>EmpId : {{userid}}</ion-item>
+                    <ion-item>Gender : {{usergender}}</ion-item>
+                    <ion-item>Transport : {{usertransport}}</ion-item>
+                    <ion-item>Food Preferences :  {{userfoodpref}}</ion-item>
+                    <ion-item>Tshirt Size : {{usertshirtsize}}</ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+

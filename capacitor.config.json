@@ -1,0 +1,6 @@
+{
+  "appId": "com.dcrewit.oceansevent",
+  "appName": "OceansEvent",
+  "bundledWebRuntime": false,
+  "webDir": "www"
+}

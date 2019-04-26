@@ -1,0 +1,115 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title >Dashboard</ion-title>
+    <ion-button (click)="logout()" slot="end" size="small" fill="outline" color="light">
+        <ion-icon name="exit"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <!-- <form [formGroup]="userForm"> -->
+      <ion-grid>
+          <ion-row>
+            <ion-col size-md="6" offset-md="3">
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-title text-center color="primary">Enter Details</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <ion-item>
+                    <ion-label position="stacked">Name</ion-label>
+                    <ion-input type="text"  text-left id="name" (ionChange)="userName($event)" [(ngModel)]="username"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label position="stacked">EmpID</ion-label>
+                    <ion-input type="text"  text-left id="empid" (ionChange)="userId($event)" [(ngModel)]="userid"></ion-input>
+                  </ion-item>
+                  <div margin-vertical>
+                    <ion-list>
+                      <ion-radio-group (ionChange)="gender($event)" [(ngModel)]="usergender" >
+                        <ion-list-header color="Light">GENDER</ion-list-header>
+                        <ion-item>
+                          <ion-label>Male</ion-label>
+                          <ion-radio value="Male"></ion-radio>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label>Female</ion-label>
+                          <ion-radio value="Female"></ion-radio>
+                        </ion-item>
+                      </ion-radio-group>
+                    </ion-list>
+                  </div>
+                  <div margin-vertical>
+                    <ion-list >
+                      <ion-list-header color="Light" >FOOD PREFERENCES</ion-list-header>
+                      <ion-item>
+                      <ion-label>Veg</ion-label>
+                      <ion-checkbox color="primary"   [(ngModel)]="veg" (ionChange)="updateVeg()" ></ion-checkbox>
+                      </ion-item>
+                      <ion-item>
+                      <ion-label>Non Veg</ion-label>
+                      <ion-checkbox color="primary" [(ngModel)]="Nonveg" (ionChange)="updateNonVeg()" ></ion-checkbox>
+                      </ion-item>
+                      <ion-item>
+                      <ion-label>Alcholic Beverages</ion-label>
+                      <ion-checkbox color="primary" [(ngModel)]="AB" (ionChange)="updateAB()" ></ion-checkbox>
+                      </ion-item>
+                      <ion-item>
+                      <ion-label>Non Alcholic Beverages</ion-label>
+                      <ion-checkbox color="primary"  [(ngModel)]="NAB" (ionChange)="updateNAB()" ></ion-checkbox>
+                      </ion-item>
+                    </ion-list>
+                  </div>
+                  <div margin-vertical>
+                    <ion-list>
+                      <ion-radio-group  (ionChange)="transport($event)" [(ngModel)]="usertransport">
+                        <ion-list-header color="Light">TRANSPORT PREFERENCES</ion-list-header>
+                        <ion-item>
+                          <ion-label>Personal</ion-label>
+                          <ion-radio value="Personal" ></ion-radio>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label>Need Transport</ion-label>
+                          <ion-radio value="Need Transport"></ion-radio>
+                        </ion-item>
+                      </ion-radio-group>
+                    </ion-list>
+                  </div>
+                  <div margin-vertical>
+                  <ion-list>
+                    <ion-grid>
+                      <ion-row>
+                        <ion-col text-left>
+                          <ion-list-header color="Light" >T-Shirt</ion-list-header>
+                        </ion-col>
+                        <ion-col text-right>
+                          <img *ngIf="isDisplayImage" src="../../assets/images/sizechart.png" style="display:block; width:100%; max-width:600px; margin:auto" />
+                          <ion-button (click)="displayImage()" size='small'>Sizechart</ion-button>
+                            <!-- <ion-button color='secondary' size = 'small'>Sizechart</ion-button> -->
+                        </ion-col>
+
+                      </ion-row>
+                    </ion-grid>
+                    <ion-item>
+                      <ion-label>Size</ion-label>
+                      <ion-select  placeholder="Select One" (ionChange)="tshirtSize($event)" [(ngModel)]="usertshirtsize">
+                        <ion-select-option value="Small">Small</ion-select-option>
+                        <ion-select-option value="Medium">Medium</ion-select-option>
+                        <ion-select-option value="Large">Large</ion-select-option>
+                        <ion-select-option value="Extra Large">Extra Large</ion-select-option>
+                        <ion-select-option value="Double Extra Large">Double Extra Large</ion-select-option>
+                        <ion-select-option value="Triple Extra large">Triple Extra large</ion-select-option>
+                      </ion-select>
+                    </ion-item>
+                  </ion-list>
+                  </div>
+                  <div margin-vertical text-center>
+                    <ion-button (click)="userDetails(userEmail)" class="submit-btn" type="submit">Submit Details</ion-button>
+                  </div>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+  <!-- </form> -->
+</ion-content>

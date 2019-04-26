@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Admin Dashboard</ion-title>
+    <ion-button (click)="logout()" slot="end" size="small" fill="outline" color="light">
+        <ion-icon name="exit"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+  <ion-content >
+      <ion-grid>
+        <ion-row>
+          <ion-col size-md="6" offset-md="3">
+            <ion-card>
+              <ion-card-content class="header-bar">
+                <ion-label color='primary' text-left>Users Count : {{usercount}}</ion-label>
+                <ion-button (click)="exportData()" text-right>Export Data</ion-button>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size-md="6" offset-md="3">
+            <ion-card>
+              <ion-card-header>
+                <ion-card-title text-center>List of Users</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                  <ion-list>
+                      <ion-item *ngFor="let emailId of emailIdList" (click)="userDetails(emailId)" >
+                        <p>
+                           <strong >{{emailId}}</strong>
+                        </p>
+                      </ion-item>
+                    </ion-list>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-content>
+  
